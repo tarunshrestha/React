@@ -9,7 +9,7 @@ function Food(){
         <ul>
             <li>Apple</li>
             <li>{ food1 }</li>
-            <li>{ food2.toUpperCase }</li>
+            <li>{ food2.toUpperCase() }</li>
         </ul>
     );
 }
