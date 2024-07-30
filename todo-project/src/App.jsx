@@ -2,54 +2,52 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { NewTodoForm } from './NewTodoForm'
+import { TodoList } from './TodoList'
 
 
 export default function App() {
-  const [newItem, setNewItem] = useState('')
   const [todos, setTodos] = useState([])
 
-  function handleSubmit(e){
-    e.preventDefault()
-
+  function addTodo(title){
     setTodos(currentTodos => {
       return  [
           ...currentTodos, 
           {
         id: crypto.randomUUID(),
-        title: newItem, 
+        title, 
         completed : false
         },
       ] 
     })
-
   }
+
+  function toogleTodo(id, completed){
+    setTodos(currentTodos => {
+      return currentTodos.map(todo => {
+        if(todo.id === id){
+          return {...todo, completed} 
+        }
+        return todo
+      })
+       }
+    )
+  }
+
+  function deleteTodo(id){
+    setTodos(currentTodos => {
+      return currentTodos.filter(todo => todo.id !== id)
+    })
+  }
+
   return (
   <>
-    <form onSubmit={handleSubmit} className="new-item-form">
-      <div className="form-row">
-        <label htmlFor="item">New Item</label>
-        <br></br>
-        <input value={newItem} onChange={e=> setNewItem(e.target.value)} type="text" id="item" />
-      </div>
-      <button className='btn'>Add</button>
-    </form>
-
+    
+    <NewTodoForm onSubmit={addTodo}/>
     <h1 className=''>TodoList</h1>
-    <ul className='list'>
-      {todos.map(todo => {
-        return (
-        <li>  
-        <label>
-          <input type="checkbox" checked={todo.completed} />
-          {todo.title}
-        </label>
-        <button className='"btn btn-danger'>Delete</button>
-      </li>
-
-      )
-      })}
-      
-    </ul>
+    <TodoList todos={todos}
+      toogleTodo={toogleTodo}
+      deleteTodo={deleteTodo}/>
   </>
 )
 }
