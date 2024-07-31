@@ -50,7 +50,7 @@ export default function App() {
 
   return (
   <>
-    
+    <p>Enter your todo's below:</p>
     <NewTodoForm onSubmit={addTodo}/>
     <h1 className=''>TodoList</h1>
     <TodoList todos={todos}
