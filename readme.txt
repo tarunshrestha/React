@@ -1,10 +1,10 @@
 Create Vite apps:
-	npm create vite
+  npm create vite
 
 Create React App:
-	* npm init react-app <app_name>
-	# Inside that directory, you can run several commands:
+  npm init react-app <app_name>
 
+Inside that directory, you can run several commands:
     npm start
     Starts the development server.
 
