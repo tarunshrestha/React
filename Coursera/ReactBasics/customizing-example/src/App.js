@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Nav />
+        <Add a={100} b={150} />
         <Promo/>
         <Intro1 />
         <Intro2 />
@@ -19,6 +20,13 @@ function App() {
       </header>
     </div>
   );
+}
+
+function Add({a, b}){
+  let value = a + b
+  return (<>
+  <h1>{value}</h1>
+  </>)
 }
 
 export default App;
