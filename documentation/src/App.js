@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import About from "./About.jsx"
@@ -12,6 +13,8 @@ function App() {
         <About />
         <img src={logo} className="App-logo" alt="logo" />
         <Button />
+        <br />
+        <CountButton/>
 
 
       </header>
@@ -28,6 +31,22 @@ function Button(){
     <button onClick={handleClick}>
       Click me
     </button>
+  );
+}
+
+function CountButton(){
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <>
+    <button onClick={handleClick}> Clicked {count} times </button>
+    <button onClick={handleClick}> Clicked {count} times </button>
+    </>
+
   );
 }
 
