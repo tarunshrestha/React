@@ -1,4 +1,4 @@
-Create Vite apps:
+Create Vite:
   npm create vite
   yarn 
   yarn dev
