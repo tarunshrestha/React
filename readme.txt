@@ -1,4 +1,4 @@
-Create from Vite:
+Create Vite:
   npm create vite
 
 Create React App:
