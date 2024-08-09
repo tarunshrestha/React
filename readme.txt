@@ -1,5 +1,7 @@
 Create Vite apps:
   npm create vite
+  yarn 
+  yarn dev
 
 Create React App:
   npm init react-app <app_name>
