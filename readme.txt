@@ -23,3 +23,6 @@ Inside that directory, you can run several commands:
 Start your first app :
   cd firstapp
   npm start
+  
+Shortcuts:
+	rafce = To create component start code
