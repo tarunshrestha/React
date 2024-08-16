@@ -18,3 +18,8 @@ a li{
   color: white;
   padding: 23px;
 }
+
+.red{
+  background-color: red;
+  color:white;
+}
