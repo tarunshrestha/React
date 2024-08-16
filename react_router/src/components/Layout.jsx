@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from './components/Navbar'; // Adjust the import path as necessary
+import Navbar from "./Navbar"; // Direct import from the same folder
+
 
 const Layout = ({ children }) => {
   return (
