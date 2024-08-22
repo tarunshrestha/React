@@ -7,7 +7,7 @@ export default function Apple(props) {
             <h2>These apples are: {props.color}</h2>
             </div>
             <div>
-            <h3>There are {props.number} apples.</h3>
+            <h3>{props.number === 0 || props.number === null ? " " : `There are ${props.number} apples.`}</h3>
         </div>
     </div>
   )
