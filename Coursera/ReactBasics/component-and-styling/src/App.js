@@ -12,11 +12,12 @@ function Logo(){
 
 function App() {
   const user = {
-    name: "Tarun",
+    name: "Tarun shrestha",
     type: "Main",
   } 
   return (
     <>
+      <h1>Test</h1>
       < Header user={user} />
       <Logo />
       < Sidebar type={user.type} />
