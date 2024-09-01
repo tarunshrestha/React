@@ -1,6 +1,7 @@
 import styles from './styles'
 import Navbar from "./components/Navbar"
 import Stats from "./components/Stats"
+import Clients from './components/Clients';
 
 
 
@@ -23,7 +24,7 @@ export default function App() {
     <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
       <Stats />
-      Business
+      <Clients />
       Billing
       </div>
     </div>
