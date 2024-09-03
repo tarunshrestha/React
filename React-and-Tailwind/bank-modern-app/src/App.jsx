@@ -25,7 +25,6 @@ export default function App() {
       <div className={`${styles.boxWidth}`}>
       <Stats />
       <Clients />
-      Billings
       </div>
     </div>
 
