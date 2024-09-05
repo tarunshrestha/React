@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
 import { SpotLight } from "@react-three/drei";
+import Island from "../models/Island";
 
 
 {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
@@ -21,6 +22,7 @@ const Home = () => {
           <SpotLight />
           <hemisphereLight />
           
+          <Island />
         </Suspense>
       </Canvas>
     </section>

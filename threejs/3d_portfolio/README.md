@@ -4,3 +4,7 @@
 
 # Drei
 - npm install @react-three/drei 
+
+
+# For animation
+- npm install @react-spring/three 
