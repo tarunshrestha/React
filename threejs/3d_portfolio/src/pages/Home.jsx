@@ -1,8 +1,10 @@
+/* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
-import { SpotLight } from "@react-three/drei";
+// import { SpotLight } from "@react-three/drei";
 import Island from "../models/Island";
+import Sky from "../models/Sky";
 
 
 {/* <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
@@ -29,12 +31,12 @@ const Home = () => {
     <section className='w-full h-screen relative'>
       <Canvas className="w-full h-screen bg-transparent" camera={{near:0.1, far:1000}}>
         <Suspense fallback={<Loader />}>
-          <directionalLight />
-          <ambientLight />
-          <pointLight />
-          <SpotLight />
-          <hemisphereLight />
-          
+          <directionalLight position={[1, 10, 1]} intensity={1.5} />
+          <ambientLight intensity={0.5} />
+          {/* <pointLight /> */}
+          {/* <SpotLight /> */}
+          <hemisphereLight skyColor="#b1e1ff" groundColor='#000000' intensity={1} />
+          <Sky/>
           <Island
             position={islandPosition}
             scale={islandScale}
