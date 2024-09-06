@@ -8,3 +8,5 @@
 
 # For animation
 - npm install @react-spring/three 
+
+time: 1.13
