@@ -2,7 +2,7 @@ import React from 'react'
 
 const Tab = () => {
   return (
-    <div>Tab</div>
+    <div className='cursor-pointer'>Tab</div>
   )
 }
 
