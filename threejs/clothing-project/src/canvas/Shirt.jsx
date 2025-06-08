@@ -1,9 +1,9 @@
 import { Decal, useGLTF, useTexture } from '@react-three/drei';
-import React from 'react'
 import { useSnapshot } from 'valtio'
 import state from '../store';
 import { easing } from 'maath';
 import { useFrame } from '@react-three/fiber';
+
 
 const Shirt = () => {
   const snap = useSnapshot(state);
