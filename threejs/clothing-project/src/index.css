@@ -51,7 +51,9 @@ html {
 }
 
 .filepicker-container {
-  @apply absolute left-full ml-3  p-3 w-[195px] h-[220px] flex flex-col rounded-md;
+  @apply absolute left-full ml-3 p-3 w-[195px] h-[220px] flex flex-col rounded-md
+         bg-white/25 shadow-[0_2px_30px_0_rgba(31,38,135,0.07)]
+         backdrop-blur-sm border border-white/20;
 }
 
 .filepicker-label {
