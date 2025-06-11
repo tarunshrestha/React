@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import shirtState from '../store'; // adjust path if needed
 
-const AIPicker = () => {
+const Expander = () => {
   const snap = useSnapshot(shirtState);
 
   const handleScaleChange = (e) => {
@@ -23,7 +23,7 @@ const AIPicker = () => {
 
   return (
     <div className="absolute left-full ml-3 " style={{ padding: "1rem", background: "#fff", borderRadius: "8px", maxWidth: "300px" }}>
-      <h3>Adjust</h3>
+      <h3 className='text-center text-sm font-mono'>Adjust</h3>
 
       {/* Scale Control */}
       <div>
@@ -75,27 +75,43 @@ const AIPicker = () => {
           onChange={(e) => handlePositionChange(1, e.target.value)}
         />
 
-        <p className=' text-gray-500 text-xs truncate'>Position Z: {snap.position[2]}</p>
+        {/* <p className=' text-gray-500 text-xs truncate'>Position Z: {snap.position[2]}</p>
+        <label className="flex items-center gap-2">
+              <span className="text-gray-500 text-xs">Front</span>
         <input
           type="range"
           min="-0.1"
-          max="0.15"
+          max="0.07"
           step="0.01"
           value={snap.position[2]}
           onChange={(e) => handlePositionChange(2, e.target.value)}
         />
+        </label> */}
 
-        <p className="text-gray-500 text-xs truncate">
+        <p className=' text-gray-500 text-xs truncate'></p>
+        <label className="flex items-center gap-2">
+              <span className="text-gray-500 text-xs">Back</span>
+        <input
+          type="checkbox"
+          checked={snap.position[2] === -0.1}
+          onChange={(e) =>
+                  handlePositionChange(2, e.target.checked ? -0.1 : 0.07)
+                }
+          value={snap.position[2]}
+        />
+        </label>
+
+        <p className="text-gray-500 text-xs truncate mt-1.5">
             </p>
             <label className="flex items-center gap-2">
               <span className="text-gray-500 text-xs">Flip</span>
               <input
                 type="checkbox"
-                checked={snap.rotation[1] === 0.06}
+                checked={snap.rotation[1] === -3.14}
                 onChange={(e) =>
-                  handleRotationChange(1, e.target.checked ? 0.06 : -3.14)
+                  handleRotationChange(1, e.target.checked ? -3.14: 0.06 )
                 }
-                className="w-3 h-3 accent-blue-500"
+                className={`w-3 h-3 accent-${snap.color}`}
               />
             </label>
       </div>
@@ -103,4 +119,4 @@ const AIPicker = () => {
   );
 };
 
-export default AIPicker;
+export default Expander;

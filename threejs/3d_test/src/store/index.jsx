@@ -11,6 +11,9 @@ const shirtState = proxy ({
     position:[0, 0.08, 0.15],
     rotation:[0, 0, 0],
     scale:0.15,
+    backPosition:[0, 0.08, 0.15],
+    backRotation:[0, 0, 0],
+    backScale:0.15,
 
 })
 

@@ -39,12 +39,12 @@ const FilePicker = ({file, setFile, readFile}) => {
             customStyles="text-xs p-1 "
           />
 
-          {/* <CustomButton 
+          <CustomButton 
             type='filled'
             title="Full"
             handleClick={() => readFile('full')}
             customStyles="text-xs p-1 "
-          /> */}
+          />
         </div>
 
     </div>
