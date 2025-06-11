@@ -23,7 +23,7 @@ const Expander = () => {
 
   return (
     <div className="absolute left-full ml-3 " style={{ padding: "1rem", background: "#fff", borderRadius: "8px", maxWidth: "300px" }}>
-      <h3 className='text-center text-sm font-mono'>Adjust</h3>
+      <h3 className='text-center text-sm font-mono mb-2'>Adjust</h3>
 
       {/* Scale Control */}
       <div>
@@ -88,7 +88,7 @@ const Expander = () => {
         />
         </label> */}
 
-        <p className=' text-gray-500 text-xs truncate'></p>
+        {/* <p className=' text-gray-500 text-xs truncate'></p>
         <label className="flex items-center gap-2">
               <span className="text-gray-500 text-xs">Back</span>
         <input
@@ -99,12 +99,12 @@ const Expander = () => {
                 }
           value={snap.position[2]}
         />
-        </label>
+        </label> */}
 
-        <p className="text-gray-500 text-xs truncate mt-1.5">
+        <p className="text-gray-500 text-xs truncate ">
             </p>
-            <label className="flex items-center gap-2">
-              <span className="text-gray-500 text-xs">Flip</span>
+            <label className="flex items-center gap-1">
+              <span className="text-gray-500 text-xs">Flip:</span>
               <input
                 type="checkbox"
                 checked={snap.rotation[1] === -3.14}

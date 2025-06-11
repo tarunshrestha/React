@@ -41,9 +41,9 @@
         {snap.isFullTexture && (
             <Decal
             mesh={shirtRef}
-            position={[0, 0, 0]}
-            rotation={[0, 0, 0]}
-            scale={1}
+            position={snap.backPosition}
+            rotation={snap.backRotation}
+            scale={snap.backScale}
             map={fullTexture}
             />
         )}
