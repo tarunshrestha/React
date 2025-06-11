@@ -49,6 +49,8 @@ const AIPicker = () => {
           value={snap.rotation[2]}
           onChange={(e) => handleRotationChange(2, e.target.value)}
         />
+
+        
       </div>
 
       {/* Position Controls */}
@@ -82,6 +84,20 @@ const AIPicker = () => {
           value={snap.position[2]}
           onChange={(e) => handlePositionChange(2, e.target.value)}
         />
+
+        <p className="text-gray-500 text-xs truncate">
+            </p>
+            <label className="flex items-center gap-2">
+              <span className="text-gray-500 text-xs">Flip</span>
+              <input
+                type="checkbox"
+                checked={snap.rotation[1] === 0.06}
+                onChange={(e) =>
+                  handleRotationChange(1, e.target.checked ? 0.06 : -3.14)
+                }
+                className="w-3 h-3 accent-blue-500"
+              />
+            </label>
       </div>
     </div>
   );
