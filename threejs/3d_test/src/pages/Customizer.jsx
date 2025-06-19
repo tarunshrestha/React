@@ -3,14 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 
 import config from '../config/config';
-import shirtState from '../store';
+import { shirtState, mugState} from '../store';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
 import { Expander, ColorPicker, CustomButton, FilePicker, Tab } from '../components';
 
-const Customizer = () => {
-  const snap = useSnapshot(shirtState);
+const Customizer = ({ selected }) => {
+  const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
 
   const [file, setFile] = useState('');
 
@@ -131,6 +131,7 @@ const Customizer = () => {
                     key={tab.name}
                     tab={tab}
                     handleClick={() => setActiveEditorTab(tab.name)}
+                    selected={selected}
                   />
                 ))}
 
@@ -162,6 +163,7 @@ const Customizer = () => {
                 isFilterTab
                 isActiveTab={activeFilterTab[tab.name]}
                 handleClick={() => handleActiveFilterTab(tab.name)}
+                selected={selected}
               />
             ))}
           </motion.div>

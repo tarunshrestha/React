@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSnapshot } from 'valtio'
-import state from '../store'
+import { shirtState, mugState} from '../store';
 
-const Tab = ({key, tab, isFilterTab, isActiveTab, handleClick,}) => {
-  const snap = useSnapshot(state)
+const Tab = ({key, tab, isFilterTab, isActiveTab, handleClick, selected}) => {
+  const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
 
   const activeStyles = isFilterTab && isActiveTab ? 
   {backgroundColor: snap.color, opacity: 0.5} :

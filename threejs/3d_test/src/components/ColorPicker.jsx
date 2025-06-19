@@ -1,10 +1,12 @@
 import React from 'react'
 import { SketchPicker } from 'react-color'
 import { useSnapshot } from 'valtio'
-import state from '../store'
+import { shirtState, mugState} from '../store';
 
-const ColorPicker = () => {
-  const snap = useSnapshot(state)
+const ColorPicker = ({ selected }) => {
+  const state = selected === 'tshirt' ? shirtState : mugState;
+  const snap = useSnapshot(state);  
+  
   // const presetColors = [
   //   "#EFBD4E", "#80C670", "#726DE8", "#EF674E", "#353934",
   //   "#3E5151", "#FFC312", "#C4E538", "#12CBC4", "#FDA7DF"

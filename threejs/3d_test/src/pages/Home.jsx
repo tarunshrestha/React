@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
     {/* <Customizer /> */}
-    <h1>Home</h1>
+    <h1 className='text-center font-bold'>Home</h1>
     </>
   )
 }

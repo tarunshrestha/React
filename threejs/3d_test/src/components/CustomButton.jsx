@@ -1,10 +1,10 @@
 import React from 'react'
-import state from '../store'
+import { shirtState, mugState} from '../store';
 import { useSnapshot } from 'valtio'
 import { getContrastingColor } from '../config/helpers';
 
 const CustomButton = ({type, title, handleClick, customStyles}) => {
-    const snap = useSnapshot(state);
+  const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
     
     const generateStyle = (type) =>{
       if(type === 'filled'){

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import shirtState from '../store'; // adjust path if needed
+import { shirtState, mugState} from '../store';
 
 const Expander = () => {
-  const snap = useSnapshot(shirtState);
+  const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
 
   const handleScaleChange = (e) => {
     shirtState.scale = parseFloat(e.target.value);

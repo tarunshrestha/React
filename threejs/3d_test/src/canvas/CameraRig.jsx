@@ -3,11 +3,11 @@ import { useFrame } from '@react-three/fiber';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 
-import state from '../store';
+import { shirtState, mugState} from '../store';
 
 const CameraRig = ({ children, scale = 1 }) => {
   const group = useRef();
-  const snap = useSnapshot(state);
+  const snap = useSnapshot(shirtState);
 
   useFrame((state, delta) => {
     // Smooth model rotation only, camera not overridden anymore

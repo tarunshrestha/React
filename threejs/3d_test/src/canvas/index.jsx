@@ -5,9 +5,9 @@ import { OrbitControls } from "@react-three/drei";
 import Shirt from './Shirt';
 import CameraRig from './CameraRig';
 import Mug from './Mug';
-import Hoodie from './Hoodie';
+// import Hoodie from './Hoodie';
 
-const CanvasModel = () => {
+const CanvasModel = ({ selectedItem }) => {
   const [scale, setScale] = useState(1);
 
   // Dynamically scale model based on screen size
@@ -31,8 +31,9 @@ const CanvasModel = () => {
         <directionalLight position={[0, 5, 5]} intensity={1} />
 
         <CameraRig scale={scale}>
-          <Shirt />
-          {/* <Mug /> */}
+          {/* {selectedItem === "tshirt" ? < Shirt /> : < Mug />} */}
+
+          <Mug />
           {/* <Hoodie /> */}
         </CameraRig>
 

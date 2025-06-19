@@ -4,10 +4,10 @@
     import { useFrame } from '@react-three/fiber';
     import { Decal, useGLTF, useTexture } from '@react-three/drei';
 
-    import state from '../store';
+import { mugState} from '../store';
 
     const Mug = () => {
-    const snap = useSnapshot(state);
+    const snap = useSnapshot(mugState);
     const { nodes, materials } = useGLTF('/models/mug.glb');
 
     const mugRef = useRef();
