@@ -31,9 +31,9 @@ const CanvasModel = ({ selectedItem }) => {
         <directionalLight position={[0, 5, 5]} intensity={1} />
 
         <CameraRig scale={scale}>
-          {/* {selectedItem === "tshirt" ? < Shirt /> : < Mug />} */}
+          {selectedItem === "mug" ? < Mug />: < Shirt /> }
 
-          <Mug />
+          {/* <Mug /> */}
           {/* <Hoodie /> */}
         </CameraRig>
 
