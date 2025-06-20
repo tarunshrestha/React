@@ -7,7 +7,7 @@ import CameraRig from './CameraRig';
 import Mug from './Mug';
 // import Hoodie from './Hoodie';
 
-const CanvasModel = ({ selectedItem }) => {
+const CanvasModel = ({ selected }) => {
   const [scale, setScale] = useState(1);
 
   // Dynamically scale model based on screen size
@@ -31,7 +31,7 @@ const CanvasModel = ({ selectedItem }) => {
         <directionalLight position={[0, 5, 5]} intensity={1} />
 
         <CameraRig scale={scale}>
-          {selectedItem === "mug" ? < Mug />: < Shirt /> }
+          {selected === "mug" ? < Mug />: < Shirt /> }
 
           {/* <Mug /> */}
           {/* <Hoodie /> */}

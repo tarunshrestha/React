@@ -40,3 +40,12 @@ export const DecalTypes = {
     filterTab: "stylishShirt",
   },
 };
+
+
+export const navLists = [
+  { label: "Home", path: "/" },
+  { label: "T-shirt", path: "/shirt" },
+  { label: "Mug", path: "/mug" },
+  { label: "About us", path: "/about" },
+  { label: "Contact us", path: "/contact" },
+];

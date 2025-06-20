@@ -19,6 +19,7 @@
     "react-color": "^2.19.3",
     "react-dom": "^19.1.0",
     "react-joystick-component": "^6.2.1",
+    "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.8",
     "three": "^0.177.0",
     "valtio": "^2.1.5"

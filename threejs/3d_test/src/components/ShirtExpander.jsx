@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 import { shirtState } from '../store'; // adjust path if needed
 
-const Expander = () => {
+const ShirtExpander = () => {
   const snap = useSnapshot(shirtState);
 
   const handleScaleChange = (e) => {
@@ -119,4 +119,4 @@ const Expander = () => {
   );
 };
 
-export default Expander;
+export default ShirtExpander;

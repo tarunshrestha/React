@@ -3,7 +3,7 @@ import { shirtState, mugState} from '../store';
 import { useSnapshot } from 'valtio'
 import { getContrastingColor } from '../config/helpers';
 
-const CustomButton = ({type, title, handleClick, customStyles}) => {
+const CustomButton = ({type, title, handleClick, customStyles, selected}) => {
   const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
     
     const generateStyle = (type) =>{

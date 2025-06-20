@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomButton from './CustomButton';
 
-const FilePicker = ({file, setFile, readFile}) => {
+const FilePicker = ({file, setFile, readFile, selected}) => {
   return (
     <div className='filepicker-container '>
       <div className="flex-1 flex flex-col ">
@@ -37,6 +37,7 @@ const FilePicker = ({file, setFile, readFile}) => {
             title="Front"
             handleClick={() => readFile('logo')}
             customStyles="text-xs p-1 "
+            selected={selected}
           />
 
           <CustomButton 
@@ -44,6 +45,7 @@ const FilePicker = ({file, setFile, readFile}) => {
             title="Back"
             handleClick={() => readFile('full')}
             customStyles="text-xs p-1 "
+            selected={selected}
           />
         </div>
 
