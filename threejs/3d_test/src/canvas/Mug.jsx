@@ -15,9 +15,7 @@ import { mugState} from '../store';
     const logoTexture = useTexture(snap.logoDecal);
     const fullTexture = useTexture(snap.fullDecal);
 
-    // console.log(materials);
-
-
+    
     useFrame((state, delta) =>
         easing.dampC(materials["Material.001"].color, snap.color, 0.25, delta)
     
@@ -26,7 +24,7 @@ import { mugState} from '../store';
     const stateString = JSON.stringify(snap);
 
     return (
-        <group key={stateString}>
+        <group key={stateString} scale={1}>
         <mesh
             ref={mugRef}
             castShadow
@@ -40,9 +38,9 @@ import { mugState} from '../store';
         {snap.isFullTexture && (
             <Decal
             mesh={mugRef}
-            position={[0, 0, 0]}
-            rotation={[0, 0, 0]}
-            scale={1}
+            position={snap.backPosition}
+            rotation={snap.backRotation}
+            scale={snap.backScale}
             map={fullTexture}
             />
         )}
@@ -50,9 +48,9 @@ import { mugState} from '../store';
         {snap.isLogoTexture && (
             <Decal
             mesh={mugRef}
-            position={[0, 0.04, 0.15]}
-            rotation={[0, 0, 0]}
-            scale={0.15}
+            position={snap.position}
+            rotation={snap.rotation}
+            scale={snap.scale}
             map={logoTexture}
             anisotropy={16}
             depthTest={false}

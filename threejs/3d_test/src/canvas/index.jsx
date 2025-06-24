@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from "@react-three/drei";
+import { Center, OrbitControls } from "@react-three/drei";
 
 import Shirt from './Shirt';
 import CameraRig from './CameraRig';
@@ -10,7 +10,7 @@ import Mug from './Mug';
 const CanvasModel = ({ selected }) => {
   const [scale, setScale] = useState(1);
 
-  // Dynamically scale model based on screen size
+  // Responsive scaling
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -19,34 +19,60 @@ const CanvasModel = ({ selected }) => {
       else setScale(5);
     };
 
-    handleResize(); // Initial
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const renderModel = () => {
+    switch (selected) {
+      case "mug":
+        return (
+          <>
+            <CameraRig scale={scale * 2}>
+              <Center>
+                <Mug />
+              </Center>
+            </CameraRig>
+            <OrbitControls
+              enableZoom={true}
+              enablePan={false}
+              rotateSpeed={1}
+              zoomSpeed={0.8}
+              maxPolarAngle={100}
+              minPolarAngle={0}
+              maxAzimuthAngle={100}  // lock Y-axis
+              minAzimuthAngle={0}
+            />
+          </>
+        );
+
+      case "tshirt":
+      default:
+        return (
+          <>
+            <CameraRig scale={scale}>
+              <Shirt />
+            </CameraRig>
+            <OrbitControls
+              enableZoom={true}
+              enablePan={false}
+              rotateSpeed={1}
+              zoomSpeed={0.8}
+              maxPolarAngle={4}
+              minPolarAngle={1}
+            />
+          </>
+        );
+    }
+  };
+
   return (
     <div style={{ height: "100vh", background: "#f0f0f0" }}>
       <Canvas camera={{ position: [0, 2, 5], fov: 60 }}>
-        <ambientLight intensity={1} />    
+        <ambientLight intensity={1} />
         <directionalLight position={[0, 5, 5]} intensity={1} />
-
-        <CameraRig scale={scale}>
-          {selected === "mug" ? < Mug />: < Shirt /> }
-
-          {/* <Mug /> */}
-          {/* <Hoodie /> */}
-        </CameraRig>
-
-        <OrbitControls 
-            enableZoom={true}
-            enablePan={false}
-            rotateSpeed={1}
-            zoomSpeed={0.8}
-            // maxAzimuthAngle={0}  // lock Y-axis
-            // minAzimuthAngle={0}
-            maxPolarAngle={4}    // lock Z-axis
-            minPolarAngle={1}
-        />
+        {renderModel()}
       </Canvas>
     </div>
   );

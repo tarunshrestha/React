@@ -7,7 +7,7 @@ import { shirtState, mugState} from '../store';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
-import { ShirtExpander, ColorPicker, CustomButton, FilePicker, Tab } from '../components';
+import { ShirtExpander, ColorPicker, CustomButton, FilePicker, Tab, MugExpander } from '../components';
 
 const Customizer = ({ selected }) => {
   const snap = useSnapshot(selected === 'tshirt' ? shirtState : mugState);
@@ -40,10 +40,15 @@ const Customizer = ({ selected }) => {
          selected === 'tshirt' ? <ShirtExpander 
           // prompt={prompt}
           // setPrompt={setPrompt}
-          generatingImg={generatingImg}
-          handleSubmit={handleSubmit} 
+          // generatingImg={generatingImg}
+          // handleSubmit={handleSubmit} 
           />
-           : 'None'
+           :  <MugExpander 
+          // prompt={prompt}
+          // setPrompt={setPrompt}
+          // generatingImg={generatingImg}
+          // handleSubmit={handleSubmit} 
+          />
           )
       default:
         return null;
