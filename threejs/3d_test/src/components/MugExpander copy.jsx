@@ -75,18 +75,18 @@ const MugExpander = () => {
           onChange={(e) => handlePositionChange(1, e.target.value)}
         />
 
-        {/* <p className=' text-gray-500 text-xs truncate'>Position Z: {snap.position[2]}</p>
+        <p className=' text-gray-500 text-xs truncate'>Position Z: {snap.position[2]}</p>
         <label className="flex items-center gap-2">
               <span className="text-gray-500 text-xs">Front</span>
         <input
           type="range"
-          min="-0.1"
-          max="0.07"
+          min="0"
+          max="0.10"
           step="0.01"
           value={snap.position[2]}
           onChange={(e) => handlePositionChange(2, e.target.value)}
         />
-        </label> */}
+        </label>
 
         {/* <p className=' text-gray-500 text-xs truncate'></p>
         <label className="flex items-center gap-2">

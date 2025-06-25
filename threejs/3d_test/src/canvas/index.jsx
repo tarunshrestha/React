@@ -48,11 +48,12 @@ const CanvasModel = ({ selected }) => {
         );
 
       case "tshirt":
-      default:
         return (
           <>
             <CameraRig scale={scale}>
+              <Center>
               <Shirt />
+              </Center>
             </CameraRig>
             <OrbitControls
               enableZoom={true}

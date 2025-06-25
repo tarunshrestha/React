@@ -8,7 +8,7 @@ import { mugState} from '../store';
 
     const Mug = () => {
     const snap = useSnapshot(mugState);
-    const { nodes, materials } = useGLTF('/models/mug.glb');
+    const { nodes, materials } = useGLTF('/models/Mug2.glb');
 
     const mugRef = useRef();
 
